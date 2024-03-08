@@ -1,1 +1,22 @@
-/
+// Code for save data from signal in LINUX
+// Open Terminal in LINUX
+// type "rtl_sdr" in terminal line ,then ENTER 
+// type "rtl_sdr -f [center frequency] -g [gain to use] -s [sampling rate] -n [number of sampling] [file name].dat"
+// for [center frequency] type frequency what you want to save e.g. -f 104500000 [we want to save data from freq 104.5 MHz]
+// for [gain to use] type gain what you want  e.g. -g 0 [gain of freq is 0 dB]
+// for [sampling rate] type sampling rate what you want to save e.g. -s 1800000 [we want to save data from freq 104.5 MHz by 1800000 Sample/s]
+// for [number of sampling] type number of sampling what you want to save e.g. -n 1800000 [we want to save data from freq 104.5 MHz by 1800000 sample]
+// and [file name] type name what you want to save e.g. 104p5.dat [mean this file is data of 104.5 MHz ]
+for example
+we want to save data from 97.5 MHz, gain 0 dB, 1800000 S/s and sample 360000 samples
+we typing ...
+mycomputer:$ rtl_sdr
+.
+.
+.
+mycomputer:$ rtl_sdr -f 97500000 -g 0 -s 1800000 -n 360000 97p5.dat  ** in terminal we cant type "." in terminal line we use "p" mean "point [.]"
+.
+.
+.
+.
+mycomputer:$
