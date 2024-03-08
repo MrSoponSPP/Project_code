@@ -11,16 +11,12 @@ function patients = Amplitude_freq(filename,n0,nf,fs,f0)
 %Open and change data type
 fid=fopen(filename,'rb');
 y=fread(fid,'uint8=>double');
-%y=fread(fid);
 y=y-127.5;
 y=y(1:2:end)+i*y(2:2:end);
-%end
-% decimatly 
-%d=decimate(y,PO,'fir');
 %
-
-%nf=nf1;
-%fs=fs1;
+%
+%
+%
 %FFT
 n0=round(n0); %round towards nearest integer
 nf=round(nf); %round towards nearest integer
@@ -31,9 +27,6 @@ p=fftshift(fft(x_segment)); %find FFT
 %
 
 % Normalized
-%z = 20*log10(abs(p)/max(abs(p))); %normalize
-%z = 20*log10(abs(p)/max(abs(p)))-20*log10((abs(p)));
-%z = 20*log10(abs(p)*2);
 z = 20*log10(abs(p))-135;
 Amplitude = z;
 %
@@ -51,8 +44,7 @@ patients2 = table;
 patients2.Amplitude = Amplitude;
 patients2.Frequency = frequency;
 
-% Bandwidth
-%powerbw(freq,fs)
+%
 %
 
 plot(freq,Amplitude)
